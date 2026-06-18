@@ -1,6 +1,6 @@
 /**
  * Smart Recruiter AI Agent runtime script.
- * Streamlined connection layer leveraging Gemini API Free Tier models.
+ * Upgraded validation structure matching modern secure AQ. token signatures.
  */
 
 (function () {
@@ -68,21 +68,25 @@ Guidelines:
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
         try {
-            // Locate client key safely mapped inside local development or build hooks
+            // Locate client key safely mapped inside local storage or layout scopes
             const apiKey = localStorage.getItem('GEMINI_API_KEY') || window.ENV_GEMINI_API_KEY;
-            
+
             if (!apiKey) {
                 removeLoader(skeletonLoader);
-                appendMessage("System Alert: API deployment variable missing. Please supply a valid Gemini Token inside your local storage instance keys under 'GEMINI_API_KEY' to run live API calls directly from your browser.", 'ai-msg');
+                appendMessage("System Alert: API deployment variable missing. Please supply your valid secure key inside your local storage instance under 'GEMINI_API_KEY' to run live requests.", 'ai-msg');
                 return;
             }
 
-            // Target the stable, free-tier accessible endpoint for text processing
-            const targetEndpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+            // High-stability text extraction target URL endpoint
+            const targetEndpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent";
 
+            // Dispatch post request implementing the necessary x-goog-api-key authentication token header
             const response = await fetch(targetEndpoint, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'x-goog-api-key': apiKey
+                },
                 body: JSON.stringify({
                     contents: [
                         {
@@ -122,7 +126,7 @@ Guidelines:
     function appendMessage(text, CSSStyleClass) {
         const bubble = document.createElement('div');
         bubble.className = `message ${CSSStyleClass}`;
-        bubble.innerHTML = text; // Permitted since inner content formatting is explicitly scrubbed/controlled
+        bubble.innerHTML = text;
         messagesContainer.appendChild(bubble);
     }
 
@@ -145,7 +149,6 @@ Guidelines:
     }
 
     function formatInlineMarkdown(rawStr) {
-        // Safe parsing formatting conversions for standard structures returned by LLM instances
         let cleaned = rawStr
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")

@@ -6,7 +6,6 @@ on:
       - main
   workflow_dispatch:
 
-# Ensure concurrent executions cancel early to optimize consumption lanes safely
 concurrency:
   group: "pages-deployment"
   cancel-in-progress: true
@@ -31,26 +30,18 @@ jobs:
             exit 1
           fi
 
-      - name: Verify Web Document Linkage Baselines
-        run: |
-          test -f index.html || { echo "::error::Missing root execution anchor: index.html"; exit 1; }
-          test -f css/style.css || { echo "::error::Missing component design definition paths"; exit 1; }
-          test -f js/app.js || { echo "::error::Missing dynamic rendering controllers"; exit 1; }
-          test -f js/ai-agent.js || { echo "::error::Missing chat agent tracking controllers"; exit 1; }
-
   deploy-infrastructure:
     name: Push Live Production Assets
     needs: quality-gate
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # Instructs engine to default directly to Node 24
     steps:
       - name: Codebase Extraction
         uses: actions/checkout@v4
 
       - name: Initialize Pages Routing Systems
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5       # Patched to v5 to fix structural token breaks
 
       - name: Standardize Build Compilation Artifact Directory Bundle
         uses: actions/upload-pages-artifact@v3

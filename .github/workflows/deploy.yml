@@ -1,0 +1,62 @@
+name: Continuous Deployment (GitOps Asset Delivery)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Ensure concurrent executions cancel early to optimize consumption lanes safely
+concurrency:
+  group: "pages-deployment"
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  quality-gate:
+    name: Structural Quality Inspection
+    runs-on: ubuntu-latest
+    steps:
+      - name: Codebase Extraction
+        uses: actions/checkout@v4
+
+      - name: Validate JSON Data Schema Integrity
+        run: |
+          if ! jq '.' data/profile-data.json > /dev/null; then
+            echo "::error::Structural syntax issues encountered parsing profile-data.json payload data layers."
+            exit 1
+          fi
+
+      - name: Verify Web Document Linkage Baselines
+        run: |
+          test -f index.html || { echo "::error::Missing root execution anchor: index.html"; exit 1; }
+          test -f css/style.css || { echo "::error::Missing component design definition paths"; exit 1; }
+          test -f js/app.js || { echo "::error::Missing dynamic rendering controllers"; exit 1; }
+          test -f js/ai-agent.js || { echo "::error::Missing chat agent tracking controllers"; exit 1; }
+
+  deploy-infrastructure:
+    name: Push Live Production Assets
+    needs: quality-gate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Codebase Extraction
+        uses: actions/checkout@v4
+
+      - name: Initialize Pages Routing Systems
+        uses: actions/configure-pages@v4
+
+      - name: Standardize Build Compilation Artifact Directory Bundle
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Execute GitOps Delivery Task to Cloud Infrastructure Edge
+        id: deployment
+        uses: actions/deploy-pages@v4

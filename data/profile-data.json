@@ -1,0 +1,64 @@
+{
+  "basics": {
+    "name": "Alex Mercer",
+    "label": "Senior DevOps & Cloud Infrastructure Engineer",
+    "email": "alex.mercer@devops.io",
+    "location": "San Francisco, CA",
+    "website": "https://alexmercer.dev",
+    "summary": "Data-driven DevOps expert with over 8 years of experience building elite CI/CD pipelines, provisioning secure Infrastructure as Code (IaC), and designing highly available cloud architectures. Specializes in transforming legacy systems into automated, containerized GitOps engines.",
+    "status": "Open to selective remote opportunities"
+  },
+  "skills": [
+    { "name": "Kubernetes (EKS/GKE)", "category": "Infrastructure" },
+    { "name": "Terraform / OpenTofu", "category": "Infrastructure" },
+    { "name": "AWS / GCP Cloud Architecture", "category": "Infrastructure" },
+    { "name": "GitHub Actions / GitLab CI", "category": "Pipelines" },
+    { "name": "Docker & Container Security", "category": "Pipelines" },
+    { "name": "ArgoCD / GitOps Workflow", "category": "Pipelines" },
+    { "name": "Prometheus & Grafana", "category": "Observability" },
+    { "name": "Python / Go / Bash", "category": "Languages" }
+  ],
+  "experience": [
+    {
+      "company": "CloudScale Solutions",
+      "position": "Principal DevOps Architect",
+      "duration": "2023 - Present",
+      "highlights": [
+        "Migrated a multi-tenant enterprise suite to a GitOps model using ArgoCD, reducing deployment times by 72%.",
+        "Architected scalable, compliance-hardened AWS landing zones using Terraform, securing over $12M in ARR infrastructure.",
+        "Implemented automated Canary deployments, shrinking production incident windows from hours to seconds."
+      ]
+    },
+    {
+      "company": "Nexus Automations",
+      "position": "Senior SRE / DevOps Engineer",
+      "duration": "2020 - 2023",
+      "highlights": [
+        "Orchestrated a zero-downtime migration of 450+ microservices to Kubernetes (EKS).",
+        "Designed optimized GitHub Actions templates used by 80+ developers, decreasing pipeline blockages by 40%.",
+        "Established unified telemetry structures with Prometheus and Grafana, saving $80k annually in redundant monitoring SaaS bills."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "HyperPipeline Core",
+      "description": "An open-source container vulnerability scanner engineered to run inline within Git workflows, auto-blocking unauthorized Docker pushes.",
+      "techStack": ["Go", "Docker", "Trivy", "GitHub Actions Actions API"],
+      "link": "https://github.com/example/hyperpipeline"
+    },
+    {
+      "title": "Zero-Trust IaC Boilerplate",
+      "description": "Enterprise-ready Terraform configurations for zero-trust VPC patterns, featuring dynamic IAM restriction patterns.",
+      "techStack": ["Terraform", "AWS", "Opa (Open Policy Agent)"],
+      "link": "https://github.com/example/zero-trust-iac"
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of California, Berkeley",
+      "degree": "B.S. in Computer Science",
+      "duration": "2012 - 2016"
+    }
+  ]
+}

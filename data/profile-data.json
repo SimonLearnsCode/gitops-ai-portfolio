@@ -1,64 +1,85 @@
 {
   "basics": {
-    "name": "Alex Mercer",
-    "label": "Senior DevOps & Cloud Infrastructure Engineer",
-    "email": "alex.mercer@devops.io",
-    "location": "San Francisco, CA",
-    "website": "https://alexmercer.dev",
-    "summary": "Data-driven DevOps expert with over 8 years of experience building elite CI/CD pipelines, provisioning secure Infrastructure as Code (IaC), and designing highly available cloud architectures. Specializes in transforming legacy systems into automated, containerized GitOps engines.",
-    "status": "Open to selective remote opportunities"
+    "name": "Tshepiso Masilo Simon Motaung",
+    "label": "Systems Administrator & DevOps Engineer",
+    "email": "motaungt500@gmail.com",
+    "location": "Johannesburg, Gauteng, South Africa",
+    "website": "https://linkedin.com/in/tshepiso-motaung-23914217a",
+    "summary": "Systems Administrator and Enterprise Operations professional with experience supporting mission-critical banking infrastructure within the Nedbank Command Center. Skilled in enterprise systems monitoring, incident management, system health checks, batch processing, production support, and infrastructure troubleshooting.",
+    "status": "Active (YES Youth Programme at Nedbank Command Center)"
   },
   "skills": [
-    { "name": "Kubernetes (EKS/GKE)", "category": "Infrastructure" },
-    { "name": "Terraform / OpenTofu", "category": "Infrastructure" },
-    { "name": "AWS / GCP Cloud Architecture", "category": "Infrastructure" },
-    { "name": "GitHub Actions / GitLab CI", "category": "Pipelines" },
-    { "name": "Docker & Container Security", "category": "Pipelines" },
-    { "name": "ArgoCD / GitOps Workflow", "category": "Pipelines" },
-    { "name": "Prometheus & Grafana", "category": "Observability" },
-    { "name": "Python / Go / Bash", "category": "Languages" }
+    { "name": "Enterprise Systems Monitoring", "category": "Operations" },
+    { "name": "Systems Administration (Linux/Windows)", "category": "Operations" },
+    { "name": "Incident Management & Resolution", "category": "Operations" },
+    { "name": "Production Support & Health Checks", "category": "Operations" },
+    { "name": "Batch Processing Operations", "category": "Operations" },
+    { "name": "Microsoft Azure", "category": "Cloud & Infrastructure" },
+    { "name": "Red Hat OpenShift", "category": "Cloud & Infrastructure" },
+    { "name": "Docker & Kubernetes", "category": "Cloud & Infrastructure" },
+    { "name": "ArgoCD (GitOps Workflows)", "category": "Cloud & Infrastructure" },
+    { "name": "Git & Code Governance", "category": "Cloud & Infrastructure" },
+    { "name": "Java / Python / JavaScript", "category": "Languages" },
+    { "name": "Node.js / C# / SQL", "category": "Languages" },
+    { "name": "REST APIs & SOAP Services", "category": "Integrations" },
+    { "name": "Postman / JIRA / Jenkins", "category": "Tools" }
   ],
   "experience": [
     {
-      "company": "CloudScale Solutions",
-      "position": "Principal DevOps Architect",
-      "duration": "2023 - Present",
+      "company": "Nedbank - Command Center",
+      "position": "Computer Operator (YES Youth Programme)",
+      "duration": "2026 - Present",
       "highlights": [
-        "Migrated a multi-tenant enterprise suite to a GitOps model using ArgoCD, reducing deployment times by 72%.",
-        "Architected scalable, compliance-hardened AWS landing zones using Terraform, securing over $12M in ARR infrastructure.",
-        "Implemented automated Canary deployments, shrinking production incident windows from hours to seconds."
+        "Monitor Enterprise Systems Management Tools to ensure the stability, performance, and availability of critical banking systems and services.",
+        "Perform real-time monitoring of infrastructure alerts and operational events, ensuring timely incident identification and escalation.",
+        "Provide first-level support and targeted second-level troubleshooting in accordance with defined operational procedures and standards.",
+        "Conduct documented system health checks within agreed timelines and proactively identify risks impacting service availability.",
+        "Execute implementation plans for infrastructure upgrades, system enhancements, and operational changes.",
+        "Support batch processing activities to ensure successful completion of scheduled business-critical processes."
       ]
     },
     {
-      "company": "Nexus Automations",
-      "position": "Senior SRE / DevOps Engineer",
-      "duration": "2020 - 2023",
+      "company": "MTN Group South Africa",
+      "position": "DevOps / Software Engineer",
+      "duration": "2025",
       "highlights": [
-        "Orchestrated a zero-downtime migration of 450+ microservices to Kubernetes (EKS).",
-        "Designed optimized GitHub Actions templates used by 80+ developers, decreasing pipeline blockages by 40%.",
-        "Established unified telemetry structures with Prometheus and Grafana, saving $80k annually in redundant monitoring SaaS bills."
+        "Enhanced backend services using Java and SQL within enterprise support systems.",
+        "Integrated REST and SOAP APIs across distributed enterprise applications and legacy systems.",
+        "Containerized backend applications using Docker and supported deployment orchestration on Kubernetes platforms.",
+        "Assisted with testing, logging analysis, debugging, and production readiness validation activities."
+      ]
+    },
+    {
+      "company": "Atos South Africa",
+      "position": "IT Intern: Platform Engineering & DevOps",
+      "duration": "2024 - 2025",
+      "highlights": [
+        "Supported cloud infrastructure deployments within Microsoft Azure and Red Hat OpenShift environments.",
+        "Monitored platform health and assisted with troubleshooting operational issues.",
+        "Configured and documented GitOps deployment workflows using ArgoCD.",
+        "Received the Gold Accolade Award and Certificate of Recognition for outstanding contributions."
       ]
     }
   ],
   "projects": [
     {
-      "title": "HyperPipeline Core",
-      "description": "An open-source container vulnerability scanner engineered to run inline within Git workflows, auto-blocking unauthorized Docker pushes.",
-      "techStack": ["Go", "Docker", "Trivy", "GitHub Actions Actions API"],
-      "link": "https://github.com/example/hyperpipeline"
+      "title": "Mobile Navigation Ecosystem",
+      "description": "Developed an indoor/outdoor mobile navigation application during studies at University of Johannesburg using advanced mapping layers.",
+      "techStack": ["Flutter", "Unity", "C#", "Firebase", "Mapbox"],
+      "link": "https://github.com/tshepiso-motaung"
     },
     {
-      "title": "Zero-Trust IaC Boilerplate",
-      "description": "Enterprise-ready Terraform configurations for zero-trust VPC patterns, featuring dynamic IAM restriction patterns.",
-      "techStack": ["Terraform", "AWS", "Opa (Open Policy Agent)"],
-      "link": "https://github.com/example/zero-trust-iac"
+      "title": "Cross-Platform Backend Application",
+      "description": "Designed and deployed a cross-platform data handling engine utilizing non-relational database structures for speed and modern data indexing.",
+      "techStack": ["React Native", "Node.js", "MongoDB"],
+      "link": "https://github.com/tshepiso-motaung"
     }
   ],
   "education": [
     {
-      "institution": "University of California, Berkeley",
-      "degree": "B.S. in Computer Science",
-      "duration": "2012 - 2016"
+      "institution": "University of Johannesburg",
+      "degree": "Diploma in Business Information Technology",
+      "duration": "2019 - 2023"
     }
   ]
 }
